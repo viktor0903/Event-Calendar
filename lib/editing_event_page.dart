@@ -92,9 +92,7 @@ class _EventEditingPageState extends State<EventEditingPage>{
     ],
   );
 
-  Widget buildFrom() => buildHeader(
-         header: 'FROM',
-         child:Row(
+  Widget buildFrom() => Row(
            children: [
              Expanded(
         //Flex more space for (Day:Month:Date:Year) over Time
@@ -111,11 +109,9 @@ class _EventEditingPageState extends State<EventEditingPage>{
                ),
              ),
            ],
-  ),
+
   );
-  Widget buildTo() => buildHeader(
-      header: 'TO',
-      child:Row(
+  Widget buildTo() => Row(
         children: [
           Expanded(
           //Flex more space for (Day:Month:Date:Year) over Time
@@ -132,7 +128,6 @@ class _EventEditingPageState extends State<EventEditingPage>{
           ),
         ),
       ],
-  ),
   );
   Future pickFromDateTime({required bool pickDate}) async{
     var date = await pickDateTime(fromDate, pickDate: pickDate);
@@ -185,7 +180,7 @@ class _EventEditingPageState extends State<EventEditingPage>{
 
   Widget buildDropdownField({
     required String text,
-    required Null Function() onClicked,
+    required onClicked,
   }) =>
       ListTile(
         title: Text(text),
