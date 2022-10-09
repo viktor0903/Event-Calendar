@@ -1,7 +1,9 @@
 
 import 'package:calendar2/calendar_widget.dart';
 import 'package:calendar2/editing_event_page.dart';
+import 'package:calendar2/event_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,19 +16,22 @@ class MyApp extends StatelessWidget {
 
 
   @override
-  Widget build(BuildContext context)=>MaterialApp(
+  Widget build(BuildContext context)=>ChangeNotifierProvider(
+    create: (context) =>EventProvider(),
+      child:MaterialApp(
     debugShowCheckedModeBanner: false,
     title: title,
 
     home: MainPage(),
 
+  ),
   );
 }
 
 class MainPage extends StatelessWidget {
-  var context;
 
-  MainPage({super.key});
+
+  const MainPage({super.key});
 
   @override
   Widget build (context) => Scaffold(

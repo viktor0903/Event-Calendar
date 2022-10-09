@@ -7,15 +7,19 @@ class Utils {
 
     return '$date $time';
   }
-  // dateTime object formatting it to String object
-  static String toDate(DateTime dateTime){
+
+  static String toDate(DateTime dateTime) {
     final date = DateFormat.yMMMEd().format(dateTime);
 
     return date;
   }
-  static String toTime(DateTime dateTime){
+
+  static String toTime(DateTime dateTime) {
     final time = DateFormat.Hm().format(dateTime);
 
     return time;
   }
+
+  static DateTime removeTime(DateTime dateTime) =>
+      DateTime(dateTime.year, dateTime.month, dateTime.day);
 }
